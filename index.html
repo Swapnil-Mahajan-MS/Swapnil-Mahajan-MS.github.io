@@ -3,26 +3,26 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Your Name – Research Portfolio</title>
-  <meta name="description" content="Research portfolio of Your Name: areas, publications, projects, service, and contact." />
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%2300b3a4'/%3E%3Ctext x='50' y='58' text-anchor='middle' font-size='56' font-family='Arial' fill='white'%3EY%3C/text%3E%3C/svg%3E"/>
+  <title>Swapnil Mahajan — Research Portfolio</title>
+  <meta name="description" content="Research portfolio of Swapnil Mahajan: Graduate Research in 3D Computer Vision, Geometric Deep Learning, and Generative AI at IIT Madras." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%2300b3a4'/%3E%3Ctext x='50' y='58' text-anchor='middle' font-size='56' font-family='Arial' fill='white'%3ES%3C/text%3E%3C/svg%3E"/>
 
   <!-- Open Graph / Twitter -->
-  <meta property="og:title" content="Your Name – Research Portfolio" />
-  <meta property="og:description" content="Research portfolio, publications, and projects." />
+  <meta property="og:title" content="Swapnil Mahajan — Research Portfolio" />
+  <meta property="og:description" content="Graduate Research in 3D Computer Vision, Geometric Deep Learning, and Generative AI." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://your-username.github.io/" />
+  <meta property="og:url" content="https://swapnilmn.github.io/" />
 
   <!-- Schema.org Person JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
-    "name": "Your Name",
-    "url": "https://your-username.github.io/",
-    "jobTitle": "PhD Student",
-    "affiliation": {"@type":"Organization","name":"Your University"},
-    "sameAs": ["https://scholar.google.com/citations?user=XXXX","https://github.com/your-username","https://www.linkedin.com/in/your-username/"]
+    "name": "Swapnil Mahajan",
+    "url": "https://swapnilmn.github.io/",
+    "jobTitle": "Graduate Research Assistant",
+    "affiliation": {"@type":"Organization","name":"IIT Madras"},
+    "sameAs": ["https://scholar.google.com/citations?user=XXXX","https://github.com/swapnilmn","https://www.linkedin.com/in/swapnil-mahajan-94a373236"]
   }
   </script>
 
@@ -81,6 +81,13 @@
     .card h3{margin:0 0 6px 0}
     .card p{margin:0}
 
+    .experience-item{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:16px;margin-bottom:16px}
+    .experience-item h3{margin:0 0 6px 0;color:var(--accent)}
+    .experience-item .company{font-weight:600;color:var(--text)}
+    .experience-item .duration{color:var(--muted);font-size:14px}
+    .experience-item ul{margin:8px 0;padding-left:20px}
+    .experience-item ul li{margin:4px 0}
+
     footer{margin:48px 0 16px;color:var(--muted);text-align:center}
 
     @media (max-width:700px){
@@ -103,12 +110,12 @@
         <div class="left">
           <div class="brand">
             <div class="avatar" aria-hidden="true"></div>
-            <a href="#top" class="pill">Your Name</a>
+            <a href="#top" class="pill">Swapnil Mahajan</a>
           </div>
           <a href="#about">About</a>
           <a href="#publications">Publications</a>
+          <a href="#experience">Experience</a>
           <a href="#projects">Projects</a>
-          <a href="#service">Service</a>
           <a href="#contact">Contact</a>
         </div>
         <button class="theme" id="themeToggle" aria-label="Toggle theme">🌓</button>
@@ -118,15 +125,15 @@
 
   <main id="top" class="container">
     <section class="hero" id="about">
-      <div class="photo" role="img" aria-label="Portrait of Your Name"></div>
+      <div class="photo" role="img" aria-label="Portrait of Swapnil Mahajan"></div>
       <div>
-        <h1>Hi, I'm <span style="background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent">Your Name</span>.</h1>
-        <p class="subtitle">PhD Student, Computer Vision & Graphics @ Your University. I build methods for 3D reconstruction and generalizable view synthesis.</p>
+        <h1>Hi, I'm <span style="background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent">Swapnil Mahajan</span>.</h1>
+        <p class="subtitle">MS Student @ IIT Madras | Graduate Research in 3D Computer Vision, Geometric Deep Learning & Generative AI | Advanced Geometric Computing Lab</p>
         <div class="chips">
-          <span class="chip">your.email@university.edu</span>
+          <span class="chip">mmahajanswapnil211@gmail.com</span>
           <a class="chip" href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a>
-          <a class="chip" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
-          <a class="chip" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="chip" href="https://github.com/swapnilmn" target="_blank" rel="noopener">GitHub</a>
+          <a class="chip" href="https://www.linkedin.com/in/swapnil-mahajan-94a373236" target="_blank" rel="noopener">LinkedIn</a>
           <a class="chip" href="#cv">CV (PDF)</a>
         </div>
       </div>
@@ -134,93 +141,210 @@
 
     <section id="research">
       <h2>Research Interests</h2>
-      <p>Neural rendering (NeRFs), 3D scene understanding, differentiable rendering, generative models for geometry, and learning from sparse or degraded visual inputs.</p>
+      <p>My research focuses on bridging 2D and 3D representations in computer vision, with applications in CAD modeling, geometric deep learning, and cross-modal retrieval systems. I work on developing AI-driven solutions for engineering design challenges.</p>
       <div class="cards">
         <div class="card">
-          <h3>Generalizable Novel View Synthesis</h3>
-          <p>Learning to render novel views without per-scene optimization.</p>
+          <h3>CAD Model Generation and Retrieval</h3>
+          <p>Developing graph transformer frameworks for 3D CAD model generation and retrieval from 2D orthographic views using spatial encoding.</p>
         </div>
         <div class="card">
-          <h3>2D→3D Transfer</h3>
-          <p>Zero-shot lifting of 2D vision models to 3D-consistent outputs.</p>
+          <h3>Geometric Deep Learning</h3>
+          <p>Applying geometric neural networks and spatial reasoning for 3D model generation and manipulation.</p>
         </div>
         <div class="card">
-          <h3>Robust Reconstruction</h3>
-          <p>Handling noise, blur, and underwater conditions in multi-view data.</p>
+          <h3>Agentic AI Systems</h3>
+          <p>Building spatially-aware AI agents for automated 3D object placement and CAD automation using LLMs.</p>
+        </div>
+        <div class="card">
+          <h3>Industrial Optimization</h3>
+          <p>Combining neural networks with optimization techniques for real-world engineering applications.</p>
         </div>
       </div>
     </section>
 
     <section id="publications">
-      <h2>Selected Publications</h2>
+      <h2>Publications</h2>
       <div class="grid">
-        <!-- Duplicate and edit .pub blocks for your papers -->
         <article class="pub">
-          <div class="title">Paper Title Goes Here</div>
-          <div class="meta">Your Name*, Coauthor A*, Coauthor B. <strong>Conference YYYY</strong>. (* equal contribution)</div>
+          <div class="title">OrthoCAD-322K: A cross-modal approach for retrieving 3D CAD models from orthographic views using a graph transformer framework</div>
+          <div class="meta">Swapnil Mahajan, et al. <strong>Computers & Graphics (Elsevier) 2025</strong> - Eurographics Symposium on 3D Object Retrieval 2025, Special Issue</div>
           <div class="links">
             <a href="#" target="_blank" rel="noopener">PDF</a>
             <a href="#" target="_blank" rel="noopener">Project</a>
             <a href="#" target="_blank" rel="noopener">Code</a>
             <details style="display:inline-block;margin-left:10px"><summary>BibTeX</summary>
-              <pre>@inproceedings{your2025paper,
-  title={Paper Title Goes Here},
-  author={Your, Name and Coauthor, A. and Coauthor, B.},
-  booktitle={Great Conf},
-  year={2025}
+              <pre>@article{mahajan2025orthocad,
+  title={OrthoCAD-322K: A cross-modal approach for retrieving 3D CAD models from orthographic views using a graph transformer framework},
+  author={Mahajan, Swapnil and others},
+  journal={Computers \& Graphics},
+  year={2025},
+  publisher={Elsevier}
 }</pre>
             </details>
-          </div>
-        </article>
-
-        <article class="pub">
-          <div class="title">Another Publication Title</div>
-          <div class="meta">Your Name, Coauthor C. <strong>Journal YYYY</strong>.</div>
-          <div class="links">
-            <a href="#">PDF</a>
-            <a href="#">Code</a>
           </div>
         </article>
       </div>
     </section>
 
+    <section id="experience">
+      <h2>Experience</h2>
+      
+      <div class="experience-item">
+        <h3>Graduate Research Assistant</h3>
+        <div class="company">Advanced Geometric Computing Lab, IIT Madras</div>
+        <div class="duration">July 2022 - Present (3+ years)</div>
+        <ul>
+          <li>Conducted AI-driven research in 3D CAD model generation and retrieval from 2D orthographic views using Graph Networks</li>
+          <li>Developed cross-modal techniques for spatial reasoning and model alignment between 2D and 3D representations</li>
+          <li>Leveraged SolidWorks for automated generation of orthographic views and large-scale CAD dataset creation</li>
+          <li>Applied edge-based spatial encoding and proximity learning to improve retrieval performance</li>
+          <li>Published findings in Computers & Graphics journal and presented at Eurographics Symposium 2025</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <h3>Data Science Intern</h3>
+        <div class="company">Lincoln Electric</div>
+        <div class="duration">August 2025 - Present</div>
+        <ul>
+          <li>Developed automated weld defect segmentation and detection system using 2D and 3D deep learning</li>
+          <li>Applied U-Net, DeepLabv3+ for 2D segmentation and PointNet, Point Transformer for 3D point clouds</li>
+          <li>Achieved +15% IoU in segmentation & +18% macro-F1 in classification, reducing manual inspection by ~40%</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <h3>Metaverse Agentic AI Intern</h3>
+        <div class="company">Tech Mahindra</div>
+        <div class="duration">June 2025 - July 2025</div>
+        <ul>
+          <li>Built spatially-aware AI agent for collision-free 3D object placement using ChatUSD in NVIDIA Omniverse</li>
+          <li>Developed agentic pipeline for 3D model creation via FreeCAD and Blender APIs integrated with GPT-4, PaLM, Claude</li>
+          <li>Conducted comprehensive benchmarking of LLM APIs for 3D model generation and manipulation tasks</li>
+        </ul>
+      </div>
+
+      <div class="experience-item">
+        <h3>Data Science Intern</h3>
+        <div class="company">Forbes Marshall</div>
+        <div class="duration">February 2025 - May 2025</div>
+        <ul>
+          <li>Built dual-model combining neural forward prediction and L-BFGS-B inverse optimization for boiler efficiency</li>
+          <li>Designed multi-restart constrained optimizer enabling robust global convergence under actuator constraints</li>
+          <li>Achieved 89.2% target accuracy and 3.42% efficiency gain on 31K+ real-world cases</li>
+        </ul>
+      </div>
+    </section>
+
     <section id="projects">
-      <h2>Projects & Demos</h2>
+      <h2>Key Projects</h2>
       <div class="cards">
         <div class="card">
-          <h3>Project Name</h3>
-          <p>Short description of what it does and why it’s interesting.</p>
+          <h3>OrthoCAD-322K Framework</h3>
+          <p>Graph Transformer-based cross-modal retrieval system for aligning 2D orthographic views with 3D CAD models using novel proximity-based spatial encoding.</p>
+          <p><a href="#" target="_blank" rel="noopener">Paper</a> · <a href="#" target="_blank" rel="noopener">GitHub</a></p>
+        </div>
+        <div class="card">
+          <h3>Consistency/Flow Diffusion with DiT</h3>
+          <p>From-scratch implementation of Consistency & Flow-Matching generators with DiT backbone, achieving 4× fewer steps vs DDPM baseline.</p>
+          <p><a href="#" target="_blank" rel="noopener">Code</a></p>
+        </div>
+        <div class="card">
+          <h3>Multimodal VLM + YOLO Pipeline</h3>
+          <p>Agentic CV pipeline integrating YOLOv8, SAM, CLIP, and BLIP-2/LLaVA with ReAct planner for natural-language driven tasks.</p>
           <p><a href="#" target="_blank" rel="noopener">Demo</a> · <a href="#" target="_blank" rel="noopener">GitHub</a></p>
         </div>
         <div class="card">
-          <h3>Toolkit / Library</h3>
-          <p>CLI + Python package for reproducible experiments.</p>
-          <p><a href="#" target="_blank" rel="noopener">Docs</a></p>
+          <h3>YOLO-Guided 3D Reconstruction</h3>
+          <p>Integration of YOLO with Gaussian Splatting for object-level 3D reconstruction, enabling 60 FPS rendering with 35% faster training.</p>
+          <p><a href="#" target="_blank" rel="noopener">Project</a></p>
+        </div>
+        <div class="card">
+          <h3>TranslitRNN</h3>
+          <p>Attention-based sequence-to-sequence model for Latin to Devanagari transliteration using the Aksharantar dataset.</p>
+          <p><a href="https://github.com/swapnilmn/TranslitRNN" target="_blank" rel="noopener">GitHub</a></p>
+        </div>
+        <div class="card">
+          <h3>Fashion-MNIST Classification</h3>
+          <p>Feedforward neural network with backpropagation from scratch, achieving 89.56% validation accuracy with comprehensive hyperparameter exploration.</p>
+          <p><a href="https://github.com/swapnilmn/Image-Classification-with-Backpropagation" target="_blank" rel="noopener">GitHub</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Master of Science - Engineering Design</h3>
+          <p><strong>Indian Institute of Technology, Madras</strong> (2022 - 2025)</p>
+          <p>CGPA: 8.52/10 | Advisor: Prof. M Ramanathan</p>
+          <p>Thesis: "Development of Graph framework (Graph Transformers) for retrieval of 3D models with 2D views"</p>
+        </div>
+        <div class="card">
+          <h3>Bachelor of Engineering - Mechanical</h3>
+          <p><strong>Savitribai Phule Pune University</strong> (2017 - 2020)</p>
+          <p>CGPA: 9.58/10</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2>Technical Skills</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Machine Learning & AI</h3>
+          <p>PyTorch, JAX, PyTorchGeometric, Hugging Face, Scikit-learn, Multi-GPU Training, WandB, Optuna</p>
+        </div>
+        <div class="card">
+          <h3>Computer Vision & 3D</h3>
+          <p>Open3D, OpenCV, PointNet, NeRF, Gaussian Splatting, 3D Reconstruction, Geometric Deep Learning</p>
+        </div>
+        <div class="card">
+          <h3>CAD & Engineering Tools</h3>
+          <p>SolidWorks API, FreeCAD, Blender, Fusion360, NVIDIA Omniverse, CAD Automation</p>
+        </div>
+        <div class="card">
+          <h3>Development & Deployment</h3>
+          <p>Python, Git, Docker, Ray, TorchScript, ONNX Runtime, Triton, LangChain, RAG, FAISS</p>
         </div>
       </div>
     </section>
 
     <section id="service">
-      <h2>Service & Teaching</h2>
-      <ul>
-        <li>Reviewer: NeurIPS 2024–2025, ICLR 2025, CVPR 2025</li>
-        <li>TA: CS6xxx Deep Learning (Fall 2024), CS5xxx Machine Learning (Spring 2025)</li>
-      </ul>
+      <h2>Service & Leadership</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Academic Service</h3>
+          <p>Teaching Assistant for Computational Geometry and Data Science courses at IIT Madras</p>
+        </div>
+        <div class="card">
+          <h3>Student Leadership</h3>
+          <p>Department Legislator (Student Legislative Council), Placement Coordinator, Standing Committee member for Research Affairs</p>
+        </div>
+        <div class="card">
+          <h3>Institute Representation</h3>
+          <p>Member of Institute delegation to visit Indian Parliament, Core Member of Engineering Design Association Charter Drafting Committee</p>
+        </div>
+      </div>
     </section>
 
     <section id="cv">
       <h2>CV</h2>
-      <p>Link a hosted PDF of your CV here. Tip: commit <code>cv.pdf</code> to the repo and link to <code>./cv.pdf</code>.</p>
+      <p>Download my complete CV: <a href="./cv.pdf" target="_blank" rel="noopener">CV (PDF)</a></p>
+      <p>Current CGPA: 8.52/10 | Expected Graduation: 2025</p>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
-      <p>Email is best: <a href="mailto:your.email@university.edu">your.email@university.edu</a></p>
-      <p>Also on <a href="https://github.com/your-username" target="_blank" rel="noopener">GitHub</a> and <a href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a>.</p>
+      <p>Email: <a href="mailto:mmahajanswapnil211@gmail.com">mmahajanswapnil211@gmail.com</a></p>
+      <p>Phone: +91-992-168-7218</p>
+      <p>Address: Hostel Sindhu, IIT Madras, Chennai - 600036</p>
+      <p>Connect with me on <a href="https://github.com/swapnilmn" target="_blank" rel="noopener">GitHub</a>, <a href="https://www.linkedin.com/in/swapnil-mahajan-94a373236" target="_blank" rel="noopener">LinkedIn</a>, and <a href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a>.</p>
     </section>
 
     <footer>
-      © <span id="year"></span> Your Name · Built with plain HTML/CSS · <a href="#top">Back to top</a>
+      © <span id="year"></span> Swapnil Mahajan · Built with HTML/CSS · <a href="#top">Back to top</a>
     </footer>
   </main>
 
@@ -228,19 +352,25 @@
     // Year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Theme toggle with system preference + localStorage
+    // Theme toggle - using in-memory storage instead of localStorage
     const prefersLight = window.matchMedia('(prefers-color-scheme: light)');
     const root = document.documentElement;
-    const saved = localStorage.getItem('theme');
-    function applyTheme(t){
-      if(t==='light') root.classList.add('light');
-      else root.classList.remove('light');
-      localStorage.setItem('theme', t);
+    let currentTheme = prefersLight.matches ? 'light' : 'dark';
+    
+    function applyTheme(theme){
+      if(theme === 'light') {
+        root.classList.add('light');
+      } else {
+        root.classList.remove('light');
+      }
+      currentTheme = theme;
     }
-    applyTheme(saved ? saved : (prefersLight.matches ? 'light' : 'dark'));
+    
+    applyTheme(currentTheme);
+    
     document.getElementById('themeToggle').addEventListener('click', ()=>{
-      const isLight = root.classList.toggle('light');
-      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      applyTheme(newTheme);
     });
 
     // External links: open in new tab if same page anchor not used
