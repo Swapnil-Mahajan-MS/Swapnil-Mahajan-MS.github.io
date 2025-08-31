@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name – Research Portfolio</title>
+  <meta name="description" content="Research portfolio of Your Name: areas, publications, projects, service, and contact." />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%2300b3a4'/%3E%3Ctext x='50' y='58' text-anchor='middle' font-size='56' font-family='Arial' fill='white'%3EY%3C/text%3E%3C/svg%3E"/>
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Your Name – Research Portfolio" />
+  <meta property="og:description" content="Research portfolio, publications, and projects." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-username.github.io/" />
+
+  <!-- Schema.org Person JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Your Name",
+    "url": "https://your-username.github.io/",
+    "jobTitle": "PhD Student",
+    "affiliation": {"@type":"Organization","name":"Your University"},
+    "sameAs": ["https://scholar.google.com/citations?user=XXXX","https://github.com/your-username","https://www.linkedin.com/in/your-username/"]
+  }
+  </script>
+
+  <style>
+    :root{
+      --bg: #0b0f14; /* dark */
+      --card:#121923;
+      --text:#e7edf5;
+      --muted:#9bb2c7;
+      --accent:#4dd0e1;
+      --accent-2:#7cf5c4;
+      --link:#7cc8ff;
+      --shadow: 0 8px 30px rgba(0,0,0,.35);
+    }
+    :root.light{
+      --bg:#f6f8fb; /* light */
+      --card:#ffffff;
+      --text:#0c1220;
+      --muted:#4a6072;
+      --accent:#0077ff;
+      --accent-2:#00b3a4;
+      --link:#0055cc;
+      --shadow: 0 8px 24px rgba(0,0,0,.08);
+    }
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"}
+    .container{max-width:980px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;background:linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,0));backdrop-filter:saturate(1.2) blur(10px);z-index:10}
+    nav{display:flex;gap:16px;align-items:center;justify-content:space-between}
+    nav .left{display:flex;gap:14px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600}
+    nav a:hover{color:var(--text)}
+    .brand{display:flex;gap:12px;align-items:center}
+    .avatar{width:40px;height:40px;border-radius:50%;box-shadow:var(--shadow);background:linear-gradient(135deg,var(--accent),var(--accent-2))}
+    .pill{padding:4px 10px;border:1px solid rgba(255,255,255,.12);border-radius:999px}
+    .theme{border:1px solid rgba(255,255,255,.12);background:transparent;color:var(--text);padding:6px 10px;border-radius:10px;cursor:pointer}
+
+    .hero{display:grid;gap:22px;grid-template-columns:120px 1fr;align-items:center;margin-top:18px}
+    .hero .photo{width:120px;height:120px;border-radius:18px;background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:var(--shadow)}
+    h1{font-size:34px;line-height:1.15;margin:0}
+    .subtitle{color:var(--muted)}
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+    .chip{background:var(--card);border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow);padding:6px 10px;border-radius:999px;color:var(--muted)}
+
+    section{margin:40px 0;padding:24px;border-radius:18px;background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));border:1px solid rgba(255,255,255,.06)}
+    section h2{margin:0 0 16px 0;font-size:22px}
+    .grid{display:grid;gap:16px}
+    .pub{display:grid;gap:8px;padding:14px;border-radius:14px;background:var(--card);border:1px solid rgba(255,255,255,.06)}
+    .pub .title{font-weight:700}
+    .pub .meta{color:var(--muted);font-size:14px}
+    .pub .links a{margin-right:10px}
+    a{color:var(--link)}
+
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+    .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:16px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 6px 0}
+    .card p{margin:0}
+
+    footer{margin:48px 0 16px;color:var(--muted);text-align:center}
+
+    @media (max-width:700px){
+      .hero{grid-template-columns:1fr;}
+      .hero .photo{width:100px;height:100px}
+    }
+
+    /* Print-friendly */
+    @media print{
+      header, .theme {display:none}
+      body{background:#fff;color:#000}
+      section{break-inside:avoid}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="left">
+          <div class="brand">
+            <div class="avatar" aria-hidden="true"></div>
+            <a href="#top" class="pill">Your Name</a>
+          </div>
+          <a href="#about">About</a>
+          <a href="#publications">Publications</a>
+          <a href="#projects">Projects</a>
+          <a href="#service">Service</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <button class="theme" id="themeToggle" aria-label="Toggle theme">🌓</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <section class="hero" id="about">
+      <div class="photo" role="img" aria-label="Portrait of Your Name"></div>
+      <div>
+        <h1>Hi, I'm <span style="background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent">Your Name</span>.</h1>
+        <p class="subtitle">PhD Student, Computer Vision & Graphics @ Your University. I build methods for 3D reconstruction and generalizable view synthesis.</p>
+        <div class="chips">
+          <span class="chip">your.email@university.edu</span>
+          <a class="chip" href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a>
+          <a class="chip" href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
+          <a class="chip" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="chip" href="#cv">CV (PDF)</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <h2>Research Interests</h2>
+      <p>Neural rendering (NeRFs), 3D scene understanding, differentiable rendering, generative models for geometry, and learning from sparse or degraded visual inputs.</p>
+      <div class="cards">
+        <div class="card">
+          <h3>Generalizable Novel View Synthesis</h3>
+          <p>Learning to render novel views without per-scene optimization.</p>
+        </div>
+        <div class="card">
+          <h3>2D→3D Transfer</h3>
+          <p>Zero-shot lifting of 2D vision models to 3D-consistent outputs.</p>
+        </div>
+        <div class="card">
+          <h3>Robust Reconstruction</h3>
+          <p>Handling noise, blur, and underwater conditions in multi-view data.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2>Selected Publications</h2>
+      <div class="grid">
+        <!-- Duplicate and edit .pub blocks for your papers -->
+        <article class="pub">
+          <div class="title">Paper Title Goes Here</div>
+          <div class="meta">Your Name*, Coauthor A*, Coauthor B. <strong>Conference YYYY</strong>. (* equal contribution)</div>
+          <div class="links">
+            <a href="#" target="_blank" rel="noopener">PDF</a>
+            <a href="#" target="_blank" rel="noopener">Project</a>
+            <a href="#" target="_blank" rel="noopener">Code</a>
+            <details style="display:inline-block;margin-left:10px"><summary>BibTeX</summary>
+              <pre>@inproceedings{your2025paper,
+  title={Paper Title Goes Here},
+  author={Your, Name and Coauthor, A. and Coauthor, B.},
+  booktitle={Great Conf},
+  year={2025}
+}</pre>
+            </details>
+          </div>
+        </article>
+
+        <article class="pub">
+          <div class="title">Another Publication Title</div>
+          <div class="meta">Your Name, Coauthor C. <strong>Journal YYYY</strong>.</div>
+          <div class="links">
+            <a href="#">PDF</a>
+            <a href="#">Code</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects & Demos</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Project Name</h3>
+          <p>Short description of what it does and why it’s interesting.</p>
+          <p><a href="#" target="_blank" rel="noopener">Demo</a> · <a href="#" target="_blank" rel="noopener">GitHub</a></p>
+        </div>
+        <div class="card">
+          <h3>Toolkit / Library</h3>
+          <p>CLI + Python package for reproducible experiments.</p>
+          <p><a href="#" target="_blank" rel="noopener">Docs</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="service">
+      <h2>Service & Teaching</h2>
+      <ul>
+        <li>Reviewer: NeurIPS 2024–2025, ICLR 2025, CVPR 2025</li>
+        <li>TA: CS6xxx Deep Learning (Fall 2024), CS5xxx Machine Learning (Spring 2025)</li>
+      </ul>
+    </section>
+
+    <section id="cv">
+      <h2>CV</h2>
+      <p>Link a hosted PDF of your CV here. Tip: commit <code>cv.pdf</code> to the repo and link to <code>./cv.pdf</code>.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email is best: <a href="mailto:your.email@university.edu">your.email@university.edu</a></p>
+      <p>Also on <a href="https://github.com/your-username" target="_blank" rel="noopener">GitHub</a> and <a href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a>.</p>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Your Name · Built with plain HTML/CSS · <a href="#top">Back to top</a>
+    </footer>
+  </main>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Theme toggle with system preference + localStorage
+    const prefersLight = window.matchMedia('(prefers-color-scheme: light)');
+    const root = document.documentElement;
+    const saved = localStorage.getItem('theme');
+    function applyTheme(t){
+      if(t==='light') root.classList.add('light');
+      else root.classList.remove('light');
+      localStorage.setItem('theme', t);
+    }
+    applyTheme(saved ? saved : (prefersLight.matches ? 'light' : 'dark'));
+    document.getElementById('themeToggle').addEventListener('click', ()=>{
+      const isLight = root.classList.toggle('light');
+      localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    });
+
+    // External links: open in new tab if same page anchor not used
+    document.querySelectorAll('a[href^="http"]').forEach(a=>{
+      a.rel = 'noopener';
+      a.target = '_blank';
+    });
+  </script>
+</body>
+</html>
