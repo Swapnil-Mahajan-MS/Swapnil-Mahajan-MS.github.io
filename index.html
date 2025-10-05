@@ -12,18 +12,19 @@
     }
 
     :root {
-      --bg-dark: #0f172a;
-      --bg-card: #1e293b;
-      --text-primary: #f1f5f9;
-      --text-muted: #94a3b8;
-      --accent: #3b82f6;
-      --accent-hover: #2563eb;
-      --border: #334155;
+      --bg-main: #ffffff;
+      --bg-sidebar: #f8f9fa;
+      --text-primary: #2d3748;
+      --text-muted: #718096;
+      --accent: #4c6ef5;
+      --accent-light: #edf2ff;
+      --border: #e2e8f0;
+      --skill-tag: #4c6ef5;
     }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-      background: var(--bg-dark);
+      background: #f5f5f5;
       color: var(--text-primary);
       line-height: 1.6;
     }
@@ -31,13 +32,16 @@
     .container {
       display: flex;
       min-height: 100vh;
+      max-width: 1800px;
+      margin: 0 auto;
+      box-shadow: 0 0 40px rgba(0,0,0,0.05);
     }
 
     /* Sidebar - 25% width */
     .sidebar {
       width: 25%;
-      background: var(--bg-card);
-      padding: 2rem 1.5rem;
+      background: var(--bg-sidebar);
+      padding: 2.5rem 2rem;
       border-right: 1px solid var(--border);
       position: fixed;
       height: 100vh;
@@ -49,7 +53,7 @@
     }
 
     .sidebar::-webkit-scrollbar-track {
-      background: var(--bg-dark);
+      background: transparent;
     }
 
     .sidebar::-webkit-scrollbar-thumb {
@@ -58,25 +62,37 @@
     }
 
     .profile-img {
-      width: 120px;
-      height: 120px;
+      width: 250px;
+      height: 250px;
       border-radius: 50%;
-      background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+      background: linear-gradient(135deg, #667eea, #764ba2);
       margin: 0 auto 1.5rem;
       display: block;
+      border: 4px solid var(--bg-main);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
     .sidebar h1 {
       font-size: 1.5rem;
       margin-bottom: 0.5rem;
       text-align: center;
+      color: var(--text-primary);
+      font-weight: 600;
     }
 
     .sidebar .title {
-      font-size: 0.9rem;
+      font-size: 0.875rem;
       color: var(--text-muted);
       text-align: center;
-      margin-bottom: 1.5rem;
+      margin-bottom: 0.5rem;
+      line-height: 1.5;
+    }
+
+    .sidebar .location {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-align: center;
+      margin-bottom: 2rem;
     }
 
     .sidebar section {
@@ -84,16 +100,15 @@
     }
 
     .sidebar h2 {
-      font-size: 0.85rem;
+      font-size: 0.75rem;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--accent);
+      letter-spacing: 0.08em;
+      color: var(--text-primary);
       margin-bottom: 0.75rem;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 0.5rem;
+      font-weight: 700;
     }
 
-    .sidebar p, .sidebar li {
+    .sidebar p {
       font-size: 0.875rem;
       color: var(--text-muted);
       margin-bottom: 0.5rem;
@@ -102,11 +117,12 @@
     .sidebar a {
       color: var(--accent);
       text-decoration: none;
-      transition: color 0.3s;
+      transition: color 0.2s;
     }
 
     .sidebar a:hover {
-      color: var(--accent-hover);
+      color: #3b5bdb;
+      text-decoration: underline;
     }
 
     .sidebar ul {
@@ -115,15 +131,9 @@
     }
 
     .sidebar li {
-      padding-left: 1rem;
-      position: relative;
-    }
-
-    .sidebar li:before {
-      content: "▹";
-      position: absolute;
-      left: 0;
-      color: var(--accent);
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 0.4rem;
     }
 
     .skills-grid {
@@ -133,65 +143,230 @@
     }
 
     .skill-tag {
-      background: var(--bg-dark);
-      padding: 0.25rem 0.75rem;
-      border-radius: 999px;
+      background: var(--bg-main);
+      padding: 0.35rem 0.75rem;
+      border-radius: 4px;
       font-size: 0.75rem;
-      color: var(--text-muted);
+      color: var(--skill-tag);
       border: 1px solid var(--border);
+      font-weight: 500;
+    }
+
+    .about-text {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 1rem;
     }
 
     /* Main Content - 75% width */
     .main-content {
       width: 75%;
       margin-left: 25%;
-      padding: 2rem 3rem;
+      padding: 2.5rem 3rem;
     }
 
-    .section-title {
-      font-size: 2rem;
+    .section-header {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
       margin-bottom: 1.5rem;
-      color: var(--text-primary);
-      border-bottom: 2px solid var(--accent);
-      padding-bottom: 0.5rem;
+      margin-top: 3rem;
+      margin-left: 3rem;
+      font-weight: 700;
+    }
+
+    .section-header:first-child {
+      margin-top: 0;
     }
 
     .projects-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(3, minmax(0, 384px));
+      gap: 2rem;
       margin-bottom: 3rem;
+      margin-left: 3rem;
+      justify-content: start;
     }
 
-    .project-card {
-      background: var(--bg-card);
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 590px));
+      gap: 2rem;
+      margin-bottom: 3rem;
+      margin-left: 3rem;
+      justify-content: start;
+    }
+
+    .publications-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 2rem;
+      margin-bottom: 3rem;
+      margin-left: 3rem;
+      max-width: 1200px;
+    }
+
+    .publication-card {
+      background: var(--bg-main);
       border: 1px solid var(--border);
       border-radius: 8px;
-      padding: 1.5rem;
-      transition: transform 0.3s, border-color 0.3s;
+      overflow: hidden;
+      transition: box-shadow 0.3s, transform 0.2s;
     }
 
-    .project-card:hover {
-      transform: translateY(-4px);
-      border-color: var(--accent);
+    .publication-card:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      transform: translateY(-2px);
+    }
+
+    .publication-img {
+      width: 100%;
+      height: 202px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      position: relative;
+    }
+
+    .publication-content {
+      padding: 1.5rem;
+    }
+
+    .publication-venue {
+      font-size: 0.7rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+
+    .publication-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .publication-subtitle {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      line-height: 1.6;
+      font-style: italic;
+    }
+
+    .publication-card p {
+      color: var(--text-muted);
+      margin-bottom: 0.75rem;
+      font-size: 0.875rem;
+      line-height: 1.6;
+    }
+
+    .publication-card ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 0;
+      margin-top: 1rem;
+    }
+
+    .publication-card li {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      padding-left: 1rem;
+      position: relative;
+      margin-bottom: 0.4rem;
+      line-height: 1.5;
+    }
+
+    .publication-card li:before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+
+    .project-card, .experience-card {
+      background: var(--bg-main);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: box-shadow 0.3s, transform 0.2s;
+    }
+
+    .project-card:hover, .experience-card:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+      transform: translateY(-2px);
+    }
+
+    .project-img {
+      width: 100%;
+      height: 180px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      position: relative;
+    }
+
+    .experience-img {
+      width: 100%;
+      height: 300px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      position: relative;
+    }
+
+    .project-content, .experience-content {
+      padding: 1rem;
     }
 
     .project-card h3 {
-      font-size: 1.25rem;
+      font-size: 1.1rem;
       margin-bottom: 0.75rem;
       color: var(--text-primary);
+      font-weight: 600;
     }
 
-    .project-card .duration {
+    .experience-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .experience-card .date {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.4rem;
+    }
+
+    .experience-card .company {
       font-size: 0.75rem;
       color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
       margin-bottom: 0.75rem;
+    }
+
+    .tag {
+      background: var(--accent-light);
+      color: var(--accent);
+      padding: 0.25rem 0.6rem;
+      border-radius: 3px;
+      font-size: 0.7rem;
+      font-weight: 500;
     }
 
     .project-card p {
       color: var(--text-muted);
       margin-bottom: 0.75rem;
-      font-size: 0.9rem;
+      font-size: 0.875rem;
+      line-height: 1.6;
     }
 
     .project-card ul {
@@ -200,12 +375,19 @@
       margin-bottom: 1rem;
     }
 
-    .project-card li {
+    .experience-card ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 0.6rem;
+    }
+
+    .project-card li, .experience-card li {
       color: var(--text-muted);
-      font-size: 0.875rem;
-      padding-left: 1.25rem;
+      font-size: 0.75rem;
+      padding-left: 1rem;
       position: relative;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.3rem;
+      line-height: 1.4;
     }
 
     .project-card li:before {
@@ -213,46 +395,41 @@
       position: absolute;
       left: 0;
       color: var(--accent);
+      font-weight: bold;
     }
 
-    .project-links {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    .project-links a {
+    .experience-card li:before {
+      content: "▪";
+      position: absolute;
+      left: 0;
       color: var(--accent);
-      text-decoration: none;
-      font-size: 0.875rem;
-      transition: color 0.3s;
     }
 
-    .project-links a:hover {
-      color: var(--accent-hover);
+    .read-more {
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-decoration: none;
+    }
+
+    .read-more:hover {
       text-decoration: underline;
     }
 
-    .badge {
-      display: inline-block;
-      background: rgba(59, 130, 246, 0.1);
-      color: var(--accent);
-      padding: 0.25rem 0.75rem;
-      border-radius: 4px;
-      font-size: 0.75rem;
-      margin-right: 0.5rem;
-      margin-bottom: 0.5rem;
+    /* Responsive */
+    @media (max-width: 1400px) {
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .experience-grid {
+        grid-template-columns: 1fr;
+      }
+      .publications-grid {
+        max-width: 100%;
+      }
     }
 
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .sidebar {
-        width: 30%;
-      }
-      .main-content {
-        width: 70%;
-        margin-left: 30%;
-      }
+    @media (max-width: 1200px) {
       .projects-grid {
         grid-template-columns: 1fr;
       }
@@ -274,6 +451,9 @@
         margin-left: 0;
         padding: 2rem 1.5rem;
       }
+      .experience-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -281,298 +461,305 @@
   <div class="container">
     <!-- Sidebar -->
     <aside class="sidebar">
-      <img src="https://via.placeholder.com/120" alt="Profile" class="profile-img">
+      <img src="file:///home/swapnil/Downloads/photo.png" alt="Profile" class="profile-img">
       <h1>Swapnil Mahajan</h1>
-      <p class="title">Computer Vision | Deep Learning | 3D Geometry</p>
+      <p class="title">MS @ IIT Madras</p>
+      <p class="title">3D Geometry | Computer Vision | Deep Learning</p>
 
       <section>
-        <h2>Contact</h2>
-        <p>📧 <a href="mailto:mmahajanswapnil211@gmail.com">mmahajanswapnil211@gmail.com</a></p>
-        <p>📱 +91-992-168-7218</p>
-        <p>📍 Chennai, India</p>
+        <h2>ABOUT</h2>
+        <p class="about-text">IIT Madras graduate student specializing in engineering design, with a focus on AI and deep learning applications in CAD modeling and retrieval. At Lincoln Electric, contributing to data science initiatives by integrating advanced computational techniques to optimize workflows and enhance data-driven decision-making.</p>
+        <p class="about-text">Previous experiences include developing agentic AI systems for 3D object manipulation and placement during an internship at Tech Mahindra.</p>
+        <p class="about-text">Extensive academic and professional background in computational geometry, geometric deep learning, and generative AI. Adept in leveraging tools such as SolidWorks, Blender APIs, and frameworks like PyTorch to bridge the gap between research and real-world applications. Motivated to innovate cross-modal solutions for engineering challenges, combining technical expertise and research insights.</p>
       </section>
 
       <section>
-        <h2>Links</h2>
-        <ul>
-          <li><a href="https://github.com/swapnilmn" target="_blank">GitHub</a></li>
-          <li><a href="https://www.linkedin.com/in/swapnil-mahajan-94a373236" target="_blank">LinkedIn</a></li>
-          <li><a href="https://scholar.google.com/" target="_blank">Google Scholar</a></li>
-          <li><a href="#">Portfolio</a></li>
-        </ul>
-      </section>
-
-      <section>
-        <h2>Education</h2>
-        <p><strong>MS in Engineering Design</strong></p>
-        <p>IIT Madras (2025)</p>
-        <p>CGPA: 8.52/10</p>
-        <br>
-        <p><strong>BE in Mechanical</strong></p>
-        <p>SPPU (2020)</p>
-        <p>CGPA: 9.58/10</p>
-      </section>
-
-      <section>
-        <h2>Core Skills</h2>
+        <h2>SKILLS</h2>
+        
+        <h3 style="font-size: 0.7rem; color: var(--text-muted); margin-top: 0.75rem; margin-bottom: 0.5rem; font-weight: 600;">ML/DL Frameworks & Libraries</h3>
         <div class="skills-grid">
+          <span class="skill-tag">Python</span>
           <span class="skill-tag">PyTorch</span>
           <span class="skill-tag">TensorFlow</span>
           <span class="skill-tag">JAX</span>
-          <span class="skill-tag">Computer Vision</span>
-          <span class="skill-tag">3D Geometry</span>
-          <span class="skill-tag">YOLOv8</span>
-          <span class="skill-tag">PointNet</span>
-          <span class="skill-tag">Graph Networks</span>
-          <span class="skill-tag">LLMs</span>
+          <span class="skill-tag">PyTorchGeometric</span>
+          <span class="skill-tag">Open3D</span>
+          <span class="skill-tag">Hugging Face</span>
+          <span class="skill-tag">Scikit-learn</span>
+          <span class="skill-tag">NumPy</span>
+          <span class="skill-tag">SciPy</span>
+          <span class="skill-tag">OpenCV</span>
+          <span class="skill-tag">Matplotlib</span>
+          <span class="skill-tag">Pandas</span>
+        </div>
+
+        <h3 style="font-size: 0.7rem; color: var(--text-muted); margin-top: 1rem; margin-bottom: 0.5rem; font-weight: 600;">MLOps & Deployment</h3>
+        <div class="skills-grid">
+          <span class="skill-tag">Multi-GPU Training</span>
+          <span class="skill-tag">Git</span>
           <span class="skill-tag">Docker</span>
+          <span class="skill-tag">Ray</span>
+          <span class="skill-tag">MLflow</span>
+          <span class="skill-tag">DVC</span>
+          <span class="skill-tag">TorchScript</span>
+          <span class="skill-tag">ONNX Runtime</span>
+          <span class="skill-tag">Triton</span>
+          <span class="skill-tag">Kubernetes</span>
+          <span class="skill-tag">CI/CD</span>
+          <span class="skill-tag">FastAPI</span>
+          <span class="skill-tag">WandB</span>
+        </div>
+
+        <h3 style="font-size: 0.7rem; color: var(--text-muted); margin-top: 1rem; margin-bottom: 0.5rem; font-weight: 600;">Computer Vision & 3D Tools</h3>
+        <div class="skills-grid">
+          <span class="skill-tag">2D/3D CV</span>
+          <span class="skill-tag">YOLOv8</span>
+          <span class="skill-tag">SAM</span>
+          <span class="skill-tag">Segmentation</span>
+          <span class="skill-tag">Point Clouds</span>
+          <span class="skill-tag">Gaussian Splatting</span>
+          <span class="skill-tag">Unity3D</span>
+          <span class="skill-tag">Blender</span>
+          <span class="skill-tag">SolidWorks</span>
+          <span class="skill-tag">Metaverse</span>
         </div>
       </section>
 
       <section>
-        <h2>Research Interests</h2>
-        <ul>
-          <li>3D Computer Vision</li>
-          <li>Geometric Deep Learning</li>
-          <li>CAD Model Generation</li>
-          <li>Multimodal AI</li>
-          <li>Industrial AI Applications</li>
-        </ul>
+        <h2>CONTACT</h2>
+        <p>📧 <a href="mailto:mmahajanswapnil211@gmail.com">Email</a></p>
+        <p>🔗 <a href="https://www.linkedin.com/in/swapnil-mahajan-94a373236" target="_blank">LinkedIn</a></p>
+        <p>💻 <a href="https://github.com/swapnilmn" target="_blank">GitHub</a></p>
+        <p>🎓 <a href="https://scholar.google.com/" target="_blank">Google Scholar</a></p>
+      </section>
+
+      <section>
+        <h2>EDUCATION</h2>
+        <p><strong>Master of Science</strong></p>
+        <p style="font-size: 0.8rem;">Engineering Design</p>
+        <p>IIT Madras • 2025</p>
+        <p style="font-size: 0.8rem; margin-bottom: 1rem;">CGPA: 8.52/10</p>
+        
+        <p><strong>Bachelor of Engineering</strong></p>
+        <p style="font-size: 0.8rem;">Mechanical Engineering</p>
+        <p>SPPU • 2020</p>
+        <p style="font-size: 0.8rem;">CGPA: 9.58/10</p>
       </section>
     </aside>
 
     <!-- Main Content -->
     <main class="main-content">
-      <h1 class="section-title">Publications</h1>
-      <div class="projects-grid">
-        <div class="project-card">
+      <h2 class="section-header">EXPERIENCE</h2>
+      <div class="experience-grid">
+        <div class="experience-card">
+          <div class="experience-img" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); background-image: url('file://///home/swapnil/Downloads/lincoln.png'); background-size: cover; background-position: center;"></div>
+          <div class="experience-content">
+            <div class="date">Aug 2025 - Present</div>
+            <h3>Computer Vision Research Intern</h3>
+            <div class="company">Lincoln Electric (R&D), Chennai</div>
+            <ul>
+              <li>Built multimodal weld defect inspection system integrating Attention U-Net (2D Image Segmentation) & PointNet (Point Cloud Segmentation)</li>
+              <li>Applied U-Net with attention gates in skip connections for contour-aware weld surface segmentation, boosting accuracy on surface anomalies</li>
+              <li>Used custom PointNet for per-point classification of 3D weld scans, capturing subtle geometric deviations often overlooked in 2D segmentaton</li>
+              <li>Integrated 2D & 3D features into multimodal pipeline, using MLP for defect classification; IoU+15%, F1+18%, 40% inspection effort reduction</li>
+            </ul>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Machine Learning</span>
+              <span class="tag">Deep Learning</span>
+              <span class="tag">Computer Vision</span>
+              <span class="tag">Image Processing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="experience-card">
+           <div class="experience-img" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); background-image: url('file://///home/swapnil/Downloads/techm.png'); background-size: cover; background-position: center;"></div>
+          <div class="experience-content">
+            <div class="date">Jun 2025 - Jul 2025</div>
+            <h3>Metaverse Agentic AI Intern</h3>
+            <div class="company">Tech Mahindra (Maker's Lab), Pune</div>
+            <ul>
+              <li>Built 3D modeling AI agent by extending ChatUSD1 with Blender2 &FreeCAD3 APIs; used Gemini (LLM) to create CAD/mesh ops from prompts</li>
+              <li>Designed  spatially aware placement AI agent in NVIDIA Omniverse, achieving 95% collision-free, across 100+ generated coherent 3D scenes</li>
+              <li>Composed adaptive agents with LangChain, integrating planners, executors, tools, and memory in ChatUSD's scalable multi-agent framework</li>
+              <li>Linked scalable modeling pipeline into legacy placer, enabling prompt-to-model & prompt-to-layout generation with reproducible USD stges</li>
+            </ul>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">GenAI</span>
+              <span class="tag">LLM</span>
+              <span class="tag">Agents</span>
+              <span class="tag">Generative AI</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="experience-card">
+          <div class="experience-img" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); background-image: url('file://///home/swapnil/Downloads/forbes.png'); background-size: cover; background-position: center;"></div>
+          <div class="experience-content">
+            <div class="date">Feb 2025 - May 2025</div>
+            <h3>Digital Twins Intern</h3>
+            <div class="company">Forbes Marshall (Technology Centre), Chennai</div>
+            <ul>
+              <li>Built digital twin prototype for boiler efficiency, combining neural surrogate modeling with constrained multi-restart Optzn for actuator control</li>
+              <li>Integrated timestamped IoT data for replay and predictive simulations, bridging historical analytics with real-time Unity digital twin framewrk</li>
+              <li>Trained on 31K IoT operating datapoints using a simplified boiler CAD model, achieving 89% test accuracy and a 3.4% modeled efficiency gain</li>
+            </ul>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Machine Learning</span>
+              <span class="tag">Deep Learning</span>
+              <span class="tag">Artificial Intelligence</span>
+              <span class="tag">IoT</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="experience-card">
+          <div class="experience-img" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); background-image: url('file://///home/swapnil/Downloads/alphaTKG.png'); background-size: cover; background-position: center;"></div>
+          <div class="experience-content">
+            <div class="date">Sep 2024 - Present</div>
+            <h3>Data Science Intern</h3>
+            <div class="company">alfaTKG India Pvt, Chennai</div>
+            <ul>
+              <li>Built neurosymbolic ML framework on 2D CAD/vector drawings by encoding geometry and dimension symbols into a graph representation</li>
+              <li>Trained GraphRNN model to predict dimensioning sequences by learning symbolic–spatial dependencies from images, achieving 90% accuracy.</li>
+            </ul>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Machine Learning</span>
+              <span class="tag">Deep Learning</span>
+              <span class="tag">Computer Vision</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <h2 class="section-header">PUBLICATIONS</h2>
+    <div class="publications-grid">
+      <div class="publication-card">
+        <div class="publication-img" 
+             style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    background-image: url('file://///home/swapnil/Downloads/orthocad.png');
+                    background-size: cover; background-position: center;">
+        </div>
+
+        <div class="publication-content">
+          <div class="publication-venue">
+            Computers & Graphics (Elsevier) • Eurographics Symposium 2025
+          </div>
+
           <h3>OrthoCAD-322K Framework</h3>
-          <div class="duration">08/2023 - 07/2025</div>
-          <span class="badge">Computers & Graphics (Elsevier)</span>
-          <span class="badge">Eurographics 2025</span>
-          <p>Cross-Modal Retrieval of 3D CAD Models from 2D Orthographic Views Using Graph Transformer Framework</p>
+          <p class="publication-subtitle">
+            Cross-Modal Retrieval of 3D CAD Models from 2D Orthographic Views Using Graph Transformer Framework
+          </p>
+
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Deep Learning</span>
+            <span class="tag">PyTorch</span>
+            <span class="tag">Computer Vision</span>
+            <span class="tag">Graph Networks</span>
+          </div>
+
+          <p>
+            Developed a novel graph transformer framework with attention-based embeddings 
+            for cross-modal retrieval of 3D CAD models from 2D orthographic projections.
+          </p>
+
           <ul>
-            <li>Achieved SOTA retrieval: 94.5% Top-1, 96.7% Top-5 accuracy</li>
-            <li>Designed attention-based cross-modal embeddings with geometric-topological reasoning</li>
-            <li>Demonstrated superior performance over GCNs/GATs baselines</li>
+            <li>Achieved state-of-the-art retrieval performance: 94.5% Top-1 accuracy and 96.7% Top-5 accuracy</li>
+            <li>Introduced OrthoCAD-322K dataset with 322,000 CAD model-view pairs</li>
+            <li>Proposed proximity-based spatial encoding improving geometric precision and retrieval robustness</li>
+            <li>Developed dual-encoder architecture combining Graphormer and PointNet models</li>
+            <li>Published in Computers & Graphics (Elsevier) journal</li>
+            <li>Presented at Eurographics Symposium on Geometry Processing 2025</li>
           </ul>
-          <div class="project-links">
-            <a href="#">📄 Paper</a>
-            <a href="#">💻 Code</a>
-            <a href="#">🌐 Project Page</a>
+
+          <!-- Publication Links / Metrics -->
+          <div style="
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            margin-top: 1rem;
+            font-size: 0.8rem;
+          ">
+            <a href="https://doi.org/10.1016/j.cag.2025.104357" target="_blank" 
+               style="color: var(--accent); text-decoration: none; font-weight: 600;">📄 DOI</a>
+            <a href="https://github.com/Swapnil-Mahajan-MS/OrthoCAD-322K" target="_blank" 
+               style="color: var(--accent); text-decoration: none; font-weight: 600;">🔗 GitHub</a>
+            <span style="color: var(--text-muted);">📈 Dataset: 283K training models</span>
           </div>
         </div>
       </div>
+    </div>
 
-      <h1 class="section-title">Industry Experience</h1>
+
+      <h2 class="section-header">PROJECTS</h2>
       <div class="projects-grid">
-        <div class="project-card">
-          <h3>Computer Vision Research Intern</h3>
-          <div class="duration">Lincoln Electric (R&D) • 08/2025 - Present</div>
-          <p>Developing AI-driven weld defect detection system using multimodal deep learning</p>
-          <ul>
-            <li>Built multimodal system: Attention U-Net (2D) + PointNet (3D point clouds)</li>
-            <li>Achieved +15% IoU in segmentation & +18% macro-F1 in classification</li>
-            <li>Reduced manual inspection effort by ~40%</li>
-            <li>Applied attention gates for contour-aware weld surface segmentation</li>
-          </ul>
-        </div>
 
         <div class="project-card">
-          <h3>Metaverse Agentic AI Intern</h3>
-          <div class="duration">Tech Mahindra (Maker's Lab) • 06/2025 - 07/2025</div>
-          <p>Built spatially-aware AI agents for 3D modeling and scene generation</p>
-          <ul>
-            <li>Extended ChatUSD with Blender & FreeCAD APIs using Gemini LLM</li>
-            <li>Achieved 95% collision-free placement across 100+ generated scenes</li>
-            <li>Designed adaptive agents with LangChain for multi-agent workflows</li>
-            <li>Enabled prompt-to-model & prompt-to-layout generation pipeline</li>
-          </ul>
-        </div>
-
-        <div class="project-card">
-          <h3>Digital Twins Intern</h3>
-          <div class="duration">Forbes Marshall • 02/2025 - 05/2025</div>
-          <p>Developed neural surrogate model for industrial boiler optimization</p>
-          <ul>
-            <li>Built dual-model combining neural prediction + L-BFGS-B optimization</li>
-            <li>Achieved 89.2% target accuracy and 3.42% efficiency gain</li>
-            <li>Trained on 31K+ real-world IoT operating datapoints</li>
-            <li>Integrated with Unity digital twin for real-time simulations</li>
-          </ul>
-        </div>
-
-        <div class="project-card">
-          <h3>Data Science Intern</h3>
-          <div class="duration">alfaTKG India Pvt • 09/2024 - Present</div>
-          <p>Neurosymbolic ML for automated CAD dimensioning</p>
-          <ul>
-            <li>Built graph-based framework encoding geometry and dimension symbols</li>
-            <li>Trained GraphRNN for dimensioning sequence prediction</li>
-            <li>Achieved 90% accuracy in symbolic-spatial dependency learning</li>
-          </ul>
-        </div>
-      </div>
-
-      <h1 class="section-title">Key Projects</h1>
-      <div class="projects-grid">
-        <div class="project-card">
-          <h3>Advanced Driver Assistance System (ADAS)</h3>
-          <div class="duration">02/2023 - 06/2023</div>
-          <p>Real-time computer vision system for vehicle safety</p>
-          <ul>
-            <li>Fine-tuned YOLOv8 on KITTI, BDD100K, FoggyLane datasets</li>
-            <li>Improved detection accuracy by 12% over COCO baseline</li>
-            <li>Reduced false departure alerts by 18% with temporal smoothing</li>
-            <li>Built complete pipeline with 3D distance estimation & risk scoring</li>
-          </ul>
-          <div class="project-links">
-            <a href="#">💻 Code</a>
-            <a href="#">📹 Demo</a>
+          <div class="project-img" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); background-image: url('file:///home/swapnil/Downloads/adas.png'); background-size: cover; background-position: center;"></div>
+          <div class="project-content">
+            <h3>Advanced Driver Assistance System</h3>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Machine Learning</span>
+              <span class="tag">Computer Vision</span>
+              <span class="tag">YOLOv8</span>
+              <span class="tag">Deep Learning</span>
+            </div>
+            <p>Real-time computer vision system for vehicle safety with object detection and lane departure warnings.</p>
+            <ul>
+              <li>Fine-tuned YOLOv8 improving detection by 12% over COCO</li>
+              <li>Reduced false alerts by 18% with temporal smoothing</li>
+              <li>Built complete pipeline with 3D distance estimation</li>
+            </ul>
           </div>
         </div>
 
         <div class="project-card">
-          <h3>WeldBot - Multimodal RAG System</h3>
-          <div class="duration">07/2025 - 08/2025</div>
-          <p>AI assistant for industrial robot troubleshooting using text + images</p>
-          <ul>
-            <li>Built RAG assistant with TesseractOCR + FAISS retrieval</li>
-            <li>Integrated SentenceTransformers + CLIP for multimodal embeddings</li>
-            <li>Reduced troubleshooting lookup time by ~45% on shop floor</li>
-            <li>Delivered FastAPI + React demo with Gemini-powered Q&A</li>
-          </ul>
-          <div class="project-links">
-            <a href="#">💻 Code</a>
-            <a href="#">🌐 Demo</a>
+          <div class="project-img" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); background-image: url('file:////home/swapnil/Downloads/weldbot.png'); background-size: cover; background-position: center;"></div>
+          <div class="project-content">
+            <h3>WeldBot - Multimodal RAG System</h3>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Generative AI</span>
+              <span class="tag">RAG</span>
+              <span class="tag">Computer Vision</span>
+              <span class="tag">NLP</span>
+            </div>
+            <p>AI assistant for industrial robot troubleshooting using multimodal retrieval-augmented generation.</p>
+            <ul>
+              <li>Built RAG with TesseractOCR + FAISS retrieval</li>
+              <li>Integrated SentenceTransformers + CLIP embeddings</li>
+              <li>Reduced troubleshooting time by ~45%</li>
+            </ul>
           </div>
         </div>
 
         <div class="project-card">
-          <h3>CADDiffusion</h3>
-          <div class="duration">06/2023 - 07/2023</div>
-          <p>Text-to-CAD image generation preserving geometric precision</p>
-          <ul>
-            <li>Fine-tuned Stable Diffusion (SD 2.1/SDXL) with LoRA</li>
-            <li>Generated CAD-like renderings with sharp edges & precise contours</li>
-            <li>Applied ControlNet for edge fidelity and geometry preservation</li>
-            <li>Enabled direct 3D model visualization from text prompts</li>
-          </ul>
-          <div class="project-links">
-            <a href="#">💻 Code</a>
+          <div class="project-img" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); background-image: url('file:////home/swapnil/Downloads/caddiffusion.png'); background-size: cover; background-position: center;"></div>
+          <div class="project-content">
+            <h3>CADDiffusion</h3>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Generative AI</span>
+              <span class="tag">Stable Diffusion</span>
+              <span class="tag">ControlNet</span>
+              <span class="tag">LoRA</span>
+            </div>
+            <p>Text-to-CAD image generation system preserving geometric precision using fine-tuned diffusion models.</p>
+            <ul>
+              <li>Fine-tuned Stable Diffusion (SD 2.1/SDXL) with LoRA</li>
+              <li>Applied ControlNet for edge fidelity preservation</li>
+              <li>Enabled direct 3D model visualization from prompts</li>
+            </ul>
           </div>
         </div>
 
-        <div class="project-card">
-          <h3>YOLO-Guided 3D Reconstruction</h3>
-          <div class="duration">2023</div>
-          <p>Integration of object detection with Gaussian Splatting</p>
-          <ul>
-            <li>Combined YOLO with Gaussian Splatting for object-level reconstruction</li>
-            <li>Achieved 60 FPS rendering performance</li>
-            <li>35% faster training compared to baseline</li>
-          </ul>
-          <div class="project-links">
-            <a href="#">🌐 Project</a>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <h3>Consistency/Flow Diffusion with DiT</h3>
-          <div class="duration">2024</div>
-          <p>From-scratch implementation of modern diffusion architectures</p>
-          <ul>
-            <li>Implemented Consistency & Flow-Matching generators</li>
-            <li>Built DiT (Diffusion Transformer) backbone</li>
-            <li>Achieved 4× fewer sampling steps vs DDPM baseline</li>
-          </ul>
-          <div class="project-links">
-            <a href="#">💻 Code</a>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <h3>Multimodal VLM + YOLO Pipeline</h3>
-          <div class="duration">2024</div>
-          <p>Agentic computer vision system with natural language interface</p>
-          <ul>
-            <li>Integrated YOLOv8, SAM, CLIP, and BLIP-2/LLaVA</li>
-            <li>Built ReAct planner for natural-language driven tasks</li>
-            <li>Created end-to-end agentic CV pipeline</li>
-          </ul>
-          <div class="project-links">
-            <a href="#">📹 Demo</a>
-            <a href="#">💻 GitHub</a>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <h3>TranslitRNN</h3>
-          <div class="duration">2023</div>
-          <p>Sequence-to-sequence transliteration model</p>
-          <ul>
-            <li>Attention-based model for Latin to Devanagari transliteration</li>
-            <li>Trained on Aksharantar dataset</li>
-            <li>Built from scratch with custom attention mechanism</li>
-          </ul>
-          <div class="project-links">
-            <a href="https://github.com/swapnilmn/TranslitRNN">💻 GitHub</a>
-          </div>
-        </div>
-
-        <div class="project-card">
-          <h3>Fashion-MNIST Classification</h3>
-          <div class="duration">2022</div>
-          <p>Neural network with backpropagation from scratch</p>
-          <ul>
-            <li>Feedforward neural network built from ground up</li>
-            <li>Achieved 89.56% validation accuracy</li>
-            <li>Comprehensive hyperparameter exploration</li>
-          </ul>
-          <div class="project-links">
-            <a href="https://github.com/swapnilmn/Image-Classification-with-Backpropagation">💻 GitHub</a>
-          </div>
-        </div>
-      </div>
-
-      <h1 class="section-title">Leadership & Service</h1>
-      <div class="projects-grid">
-        <div class="project-card">
-          <h3>Department Legislator (Research)</h3>
-          <p>Student Legislative Council, IIT Madras</p>
-          <ul>
-            <li>Representing 200+ scholars' interests</li>
-            <li>Proposing and reviewing policy bills</li>
-          </ul>
-        </div>
-
-        <div class="project-card">
-          <h3>Placement Coordinator</h3>
-          <p>Placement & Internship Cell, IIT Madras</p>
-          <ul>
-            <li>Managed placement process for 7.5k+ students</li>
-            <li>Facilitated communication with 25+ companies</li>
-          </ul>
-        </div>
-
-        <div class="project-card">
-          <h3>Teaching Assistant</h3>
-          <p>IIT Madras</p>
-          <ul>
-            <li>Data Science: Theory and Practice</li>
-            <li>Computational Geometry</li>
-            <li>Designed lab exercises and evaluated assignments</li>
-          </ul>
-        </div>
-
-        <div class="project-card">
-          <h3>Peer Reviewer</h3>
-          <p>Computers & Graphics Journal</p>
-          <ul>
-            <li>Critically evaluating research manuscripts</li>
-            <li>Providing constructive feedback to authors</li>
-          </ul>
-        </div>
       </div>
     </main>
   </div>
