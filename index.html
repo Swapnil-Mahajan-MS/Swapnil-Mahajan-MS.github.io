@@ -263,21 +263,24 @@
       line-height: 1.6;
     }
 
-    .publication-card ul {
-      list-style: none;
-      padding: 0;
-      margin-bottom: 0;
-      margin-top: 1rem;
-    }
+  .publication-card ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 0;
+    margin-top: 1rem;
+    column-count: 2;        /* ADD THIS LINE */
+    column-gap: 2rem;       /* ADD THIS LINE */
+  }
 
-    .publication-card li {
-      color: var(--text-muted);
-      font-size: 0.8rem;
-      padding-left: 1rem;
-      position: relative;
-      margin-bottom: 0.4rem;
-      line-height: 1.5;
-    }
+  .publication-card li {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    padding-left: 1rem;
+    position: relative;
+    margin-bottom: 0.4rem;
+    line-height: 1.5;
+    break-inside: avoid;    /* ADD THIS LINE */
+  }
 
     .publication-card li:before {
       content: "▸";
@@ -453,6 +456,11 @@
       }
       .experience-grid {
         grid-template-columns: 1fr;
+      }
+      
+      /* ADD THESE LINES */
+      .publication-card ul {
+        column-count: 1;
       }
     }
   </style>
