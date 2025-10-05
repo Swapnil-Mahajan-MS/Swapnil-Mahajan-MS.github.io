@@ -37,7 +37,7 @@
       box-shadow: 0 0 40px rgba(0,0,0,0.05);
     }
 
-    /* Sidebar - 25% width */
+    /* Sidebar - 20% width */
     .sidebar {
       width: 20%;
       background: var(--bg-sidebar);
@@ -159,54 +159,54 @@
       margin-bottom: 1rem;
     }
 
-    /* Main Content - 75% width */
+    /* Main Content - 80% width */
     .main-content {
       width: 80%;
-      margin-left: 25%;
+      margin-left: 20%;
       padding: 2.5rem 3rem;
     }
 
-  .section-header {
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--text-muted);
-    margin-bottom: 1.5rem;
-    margin-top: 3rem;
-    margin-left: 0;  /* Change from 3rem to 0 */
-    font-weight: 700;
-  }
+    .section-header {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      margin-top: 3rem;
+      margin-left: 0;
+      font-weight: 700;
+    }
 
     .section-header:first-child {
       margin-top: 0;
     }
 
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 384px));
-    gap: 2rem;
-    margin-bottom: 3rem;
-    margin-left: 0;  /* Change from 3rem to 0 */
-    justify-content: start;
-  }
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 384px));
+      gap: 2rem;
+      margin-bottom: 3rem;
+      margin-left: 0;
+      justify-content: start;
+    }
 
-  .experience-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 590px));
-    gap: 2rem;
-    margin-bottom: 3rem;
-    margin-left: 0;  /* Change from 3rem to 0 */
-    justify-content: start;
-  }
+    .experience-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 590px));
+      gap: 2rem;
+      margin-bottom: 3rem;
+      margin-left: 0;
+      justify-content: start;
+    }
 
-  .publications-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    gap: 2rem;
-    margin-bottom: 3rem;
-    margin-left: 0;  /* Change from 3rem to 0 */
-    max-width: 1200px;
-  }
+    .publications-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 2rem;
+      margin-bottom: 3rem;
+      margin-left: 0;
+      max-width: 1200px;
+    }
 
     .publication-card {
       background: var(--bg-main);
@@ -214,6 +214,7 @@
       border-radius: 8px;
       overflow: hidden;
       transition: box-shadow 0.3s, transform 0.2s;
+      cursor: pointer;
     }
 
     .publication-card:hover {
@@ -263,24 +264,24 @@
       line-height: 1.6;
     }
 
-  .publication-card ul {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 0;
-    margin-top: 1rem;
-    column-count: 2;        /* ADD THIS LINE */
-    column-gap: 2rem;       /* ADD THIS LINE */
-  }
+    .publication-card ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 0;
+      margin-top: 1rem;
+      column-count: 2;
+      column-gap: 2rem;
+    }
 
-  .publication-card li {
-    color: var(--text-muted);
-    font-size: 0.8rem;
-    padding-left: 1rem;
-    position: relative;
-    margin-bottom: 0.4rem;
-    line-height: 1.5;
-    break-inside: avoid;    /* ADD THIS LINE */
-  }
+    .publication-card li {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      padding-left: 1rem;
+      position: relative;
+      margin-bottom: 0.4rem;
+      line-height: 1.5;
+      break-inside: avoid;
+    }
 
     .publication-card li:before {
       content: "▸";
@@ -296,6 +297,7 @@
       border-radius: 8px;
       overflow: hidden;
       transition: box-shadow 0.3s, transform 0.2s;
+      cursor: pointer;
     }
 
     .project-card:hover, .experience-card:hover {
@@ -419,6 +421,90 @@
       text-decoration: underline;
     }
 
+    /* Modal Overlay */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: 1000;
+      overflow-y: auto;
+      padding: 2rem;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: var(--bg-main);
+      border-radius: 12px;
+      max-width: 1000px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      position: relative;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      animation: modalSlideIn 0.3s ease-out;
+    }
+
+    @keyframes modalSlideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .modal-close {
+      position: sticky;
+      top: 1rem;
+      left: calc(100% - 3rem);
+      background: var(--accent);
+      color: white;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.5rem;
+      line-height: 1;
+      z-index: 10;
+      transition: background 0.2s;
+      margin-left: auto;
+      margin-right: 1rem;
+      margin-bottom: -40px;
+      float: right;
+    }
+
+    .modal-close:hover {
+      background: #3b5bdb;
+    }
+
+    /* Modal card adjustments */
+    .modal-content .experience-card,
+    .modal-content .project-card,
+    .modal-content .publication-card {
+      cursor: default;
+      box-shadow: none;
+      transform: none;
+    }
+
+    .modal-content .experience-card:hover,
+    .modal-content .project-card:hover,
+    .modal-content .publication-card:hover {
+      box-shadow: none;
+      transform: none;
+    }
+
     /* Responsive */
     @media (max-width: 1400px) {
       .projects-grid {
@@ -458,9 +544,16 @@
         grid-template-columns: 1fr;
       }
       
-      /* ADD THESE LINES */
       .publication-card ul {
         column-count: 1;
+      }
+
+      .modal-overlay {
+        padding: 1rem;
+      }
+
+      .modal-content {
+        max-height: 95vh;
       }
     }
   </style>
@@ -483,7 +576,6 @@
           Previously developed agentic AI systems for 3D object manipulation at Tech Mahindra. Strong foundation in computational geometry, geometric deep learning, and generative AI, with expertise in SolidWorks, Blender APIs, and PyTorch to bridge research and real-world engineering applications.
         </p>
       </section>
-
 
       <section>
         <h2>SKILLS</h2>
@@ -689,9 +781,6 @@
             <li>Aligned 2D–3D embeddings via contrastive learning for cross-modal retrieval</li>
           </ul>
 
-
-
-          <!-- Publication Links / Metrics -->
           <div style="
             display: flex;
             flex-wrap: wrap;
@@ -709,7 +798,6 @@
         </div>
       </div>
     </div>
-
 
       <h2 class="section-header">PROJECTS</h2>
       <div class="projects-grid">
@@ -777,5 +865,63 @@
       </div>
     </main>
   </div>
+
+  <script>
+    // Get all cards
+    const cards = document.querySelectorAll('.project-card, .experience-card, .publication-card');
+
+    // Create modal overlay
+    const modalOverlay = document.createElement('div');
+    modalOverlay.className = 'modal-overlay';
+    document.body.appendChild(modalOverlay);
+
+    // Add click handlers to all cards
+    cards.forEach(card => {
+      card.addEventListener('click', function() {
+        // Clone the card content
+        const modalContent = document.createElement('div');
+        modalContent.className = 'modal-content';
+        
+        // Add close button
+        const closeBtn = document.createElement('button');
+        closeBtn.className = 'modal-close';
+        closeBtn.innerHTML = '×';
+        closeBtn.onclick = closeModal;
+        modalContent.appendChild(closeBtn);
+        
+        // Clone the entire card
+        const cardClone = card.cloneNode(true);
+        modalContent.appendChild(cardClone);
+        
+        // Clear previous content and add new
+        modalOverlay.innerHTML = '';
+        modalOverlay.appendChild(modalContent);
+        
+        // Show modal
+        modalOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    // Close modal function
+    function closeModal() {
+      modalOverlay.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+
+    // Close on overlay click
+    modalOverlay.addEventListener('click', function(e) {
+      if (e.target === modalOverlay) {
+        closeModal();
+      }
+    });
+
+    // Close on ESC key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        closeModal();
+      }
+    });
+  </script>
 </body>
 </html>
