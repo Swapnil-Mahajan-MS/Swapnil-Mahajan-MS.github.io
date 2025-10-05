@@ -160,16 +160,14 @@
     }
 
     /* Main Content - 80% width */
-
-    /* Main Content - 80% width */
     .main-content {
       width: 80%;
       margin-left: 20%;
-      padding: 2.5rem 3rem 2.5rem 5rem;
+      padding: 2.5rem 3rem 2.5rem 8rem;
     }
 
     .section-header {
-      font-size: 1.1rem;
+      font-size: 1.5rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
       color: var(--text-muted);
@@ -236,7 +234,7 @@
     }
 
     .publication-venue {
-      font-size: 0.7rem;
+      font-size: 1rem;
       color: var(--accent);
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -261,7 +259,7 @@
 
     .publication-card p {
       color: var(--text-muted);
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.9rem;
       font-size: 0.875rem;
       line-height: 1.6;
     }
@@ -277,7 +275,7 @@
 
     .publication-card li {
       color: var(--text-muted);
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       padding-left: 1rem;
       position: relative;
       margin-bottom: 0.4rem;
@@ -390,7 +388,7 @@
 
     .project-card li, .experience-card li {
       color: var(--text-muted);
-      font-size: 0.75rem;
+      font-size: 0.9rem;
       padding-left: 1rem;
       position: relative;
       margin-bottom: 0.3rem;
@@ -491,6 +489,13 @@
       background: #3b5bdb;
     }
 
+    .modal-content .experience-card:hover,
+    .modal-content .project-card:hover,
+    .modal-content .publication-card:hover {
+      box-shadow: none;
+      transform: none;
+    }
+
     /* Modal card adjustments */
     .modal-content .experience-card,
     .modal-content .project-card,
@@ -507,6 +512,30 @@
       transform: none;
     }
 
+    /* Fix cropped images in modal */
+    .modal-content .experience-img {
+      height: 0;
+      padding-bottom: 50%; /* 2:1 ratio */
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .modal-content .project-img {
+      height: 0;
+      padding-bottom: 56.25%; /* 16:9 ratio */
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .modal-content .publication-img {
+      height: 0;
+      padding-bottom: 20%; /* 5:3 ratio */
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
     /* Responsive */
     @media (max-width: 1400px) {
       .projects-grid {
@@ -664,10 +693,10 @@
             <h3>Computer Vision Research Intern</h3>
             <div class="company">Lincoln Electric (R&D), Chennai</div>
             <ul>
-              <li>Built multimodal weld defect inspection system integrating Attention U-Net (2D Image Segmentation) & PointNet (Point Cloud Segmentation)</li>
-              <li>Applied U-Net with attention gates in skip connections for contour-aware weld surface segmentation, boosting accuracy on surface anomalies</li>
-              <li>Used custom PointNet for per-point classification of 3D weld scans, capturing subtle geometric deviations often overlooked in 2D segmentaton</li>
-              <li>Integrated 2D & 3D features into multimodal pipeline, using MLP for defect classification; IoU+15%, F1+18%, 40% inspection effort reduction</li>
+            <li>Developing weld defect classification module as part of an automatic weld inspection system built on U-Net segmentation outputs</li>
+            <li>Implemented hybrid models combining geometric feature extraction with CNNs and MLPs, improving defect recognition accuracy</li>
+            <li>Performed data cleaning, preprocessing, and registration in Azure to enable scalable and reliable training pipelines</li>
+            <li>Evaluating model robustness across varying surface materials, lighting conditions, and noise levels for real-world deployment</li>
             </ul>
             <div class="project-tags">
               <span class="tag">Python</span>
@@ -723,15 +752,17 @@
         </div>
 
         <div class="experience-card">
-          <div class="experience-img" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); background-image: url('images/alphaTKG.png'); background-size: cover; background-position: center;"></div>
+          <div class="experience-img" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); background-image: url('images/agcl.png'); background-size: cover; background-position: center;"></div>
           <div class="experience-content">
-            <div class="date">Sep 2024 - Present</div>
-            <h3>Data Science Intern</h3>
-            <div class="company">alfaTKG India Pvt, Chennai</div>
-            <ul>
-              <li>Built neurosymbolic ML framework on 2D CAD/vector drawings by encoding geometry and dimension symbols into a graph representation</li>
-              <li>Trained GraphRNN model to predict dimensioning sequences by learning symbolic–spatial dependencies from images, achieving 90% accuracy.</li>
-            </ul>
+          <div class="date">Jul 2022 - Present</div>
+          <h3>Graduate Research Assistant</h3>
+          <div class="company">Advanced Geometric Computing Lab, IIT Madras</div>
+          <ul>
+            <li>Conducting research in machine learning and computer vision with focus on geometric and spatial data understanding.</li>
+            <li>Performed literature reviews and implemented state-of-the-art deep learning models for experimental evaluation.</li>
+            <li>Developed data generation and preprocessing pipelines for large-scale research experiments.</li>
+            <li>Contributed to publications and collaborative research in AI-driven modeling and representation learning.</li>
+          </ul>
             <div class="project-tags">
               <span class="tag">Python</span>
               <span class="tag">Machine Learning</span>
